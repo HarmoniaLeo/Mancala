@@ -4,8 +4,8 @@ from math import fabs
 
 import numpy as np
 import torch 
-from torch.utils import data # 获取迭代数据
-from torch.autograd import Variable # 获取变量
+from torch.utils import data
+from torch.autograd import Variable
 from utilityTrain import CNNnet
 
 class minimaxAgent:
@@ -13,7 +13,7 @@ class minimaxAgent:
     MINIMAX=1
     ABPRUNE=2
     MEANVALUE=3
-    def __init__(self,playerType=MEANVALUE,ply=2):#玩家序号，玩家类别,minimax深度
+    def __init__(self,playerType=MEANVALUE,ply=2):#Player no., player category,minimax depth
         self.num=True
         self.opp=2
         self.type=playerType

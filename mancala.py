@@ -171,7 +171,6 @@ class Mancala_RL:
                 pocket_position = 0
                 
             # Consider special cases (mancala pocket) before normal stone drops
-            # 不考虑额外步骤
             # mancala_1_position = pocket_position==6
             # mancala_2_position = pocket_position==13
             player_1 = player == True

@@ -4,8 +4,8 @@ import time
 startState=(4,4,4,4,4,4,0,4,4,4,4,4,4,0,True)
 
 def transition(state,action):
-    #state：输入15位元组状态（如(0,0,0,0,0,0,24,0,0,0,0,0,0,24,True)），表示此时12个小袋子中球数均为0，两边大袋子中各有24个球，而当前轮到player1行动
-    #action：0-5的数值。player1的回合选取袋子操作时，从左下到右下0-5；player2的回合选取袋子操作时，从右上到左上0-5
+    #state: enter a 15-bit tuple state (e.g. (0,0,0,0,0,0,0,24,0,0,0,0,0,0,0,0,24,True)), indicating that the number of gems in each of the 12 non-scoring plates are 0, the two scoring plates have 24 balls each, and it is player1's turn to act 
+    #action: a value from 0-5. player1's turn is 0-5 from bottom left to bottom right; player2's turn is 0-5 from top right to top left
     
     
     newstate=list(state)
@@ -37,7 +37,7 @@ def transition(state,action):
             if point==14:
                 point=0
     return tuple(newstate)
-    #newstate是新的状态
+    #newstate is the new state
 
 def transitionIterating(state,action):
     print("iter")
@@ -93,7 +93,7 @@ def transitionIterating(state,action):
             if point==14:
                 point=0
 
-def getLegalActions(state):  #给出state，返回合法行动列表（取值在0-5）
+def getLegalActions(state):  #Given state, return a list of legal actions (taking values from 0-5)
     actions=[]
     if state[-1]==True:
         for i in range(0,6):
@@ -106,10 +106,10 @@ def getLegalActions(state):  #给出state，返回合法行动列表（取值在
     return actions
 
 
-def isTerminal(state):  #给出state，判断是否是终止状态
+def isTerminal(state):  #Given state, determine if it is a terminated state
     if (np.sum(state[:6])==0) or (np.sum(state[7:13])==0):
         return True
     return False
 
-def getSum(state):   #返回player1方所有球数总和、player2方所有球数总和，判断输赢的时候会用到
+def getSum(state):   #Returns the sum of all gems on player1's side and the sum of all gems on player2's side, which is used to determine the winner
     return np.sum(state[:7]),np.sum(state[7:-1])
