@@ -35,7 +35,7 @@ There is an additional rule. If two conditions are met at the same time, a captu
 
 The following figure is our simulation interface for Mancala:
 
-<img src="media/image-20220806103332578.png" alt="image-20220806103332578" width="50%" />
+<img src="media/image-20220806103332578.png" alt="image-20220806103332578" width="80%" />
 
 Click `start a game using P1 or P2` to play chess with the AI set by the other side. Move by **clicking the number in the upper left corner** of the non-scoring plate on the picture.
 Click `AIs against each other` to let the two AI players play chess.
